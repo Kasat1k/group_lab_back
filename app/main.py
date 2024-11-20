@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="FastAPI SQLite Docker App")
+app = FastAPI(title="GLBACK")
 
 origins = [
     "*",  
@@ -23,4 +23,4 @@ app.include_router(test_router)
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to FastAPI with SQLite and Docker"}
+    return {"message": "GLBACK"}
