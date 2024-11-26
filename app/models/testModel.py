@@ -67,7 +67,7 @@ class Submission(Base):
     user_id = Column(Integer, ForeignKey('users.id'))
     grade = Column(Float)
     assignment = relationship("Assignment", back_populates="submissions")
-    #user = relationship("User", back_populates="submissions")
+    user = relationship("User", back_populates="submissions")
 
 
 class Test(Base):
@@ -136,6 +136,9 @@ Chapter.tests = relationship("Test", order_by=Test.id, back_populates="chapter")
 Assignment.submissions = relationship("Submission", order_by=Submission.id, back_populates="assignment")
 Test.questions = relationship("Question", order_by=Question.id, back_populates="test")
 Question.options = relationship("Option", order_by=Option.id, back_populates="question")
+User.submissions = relationship("Submission", order_by=Submission.id, back_populates="user")
+
+
 
 
 
